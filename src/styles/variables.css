@@ -1,0 +1,6 @@
+:root {
+    --color-background: #ffffff;
+    --color-text-primary: #111111;
+    --container-max-width: 1200px;
+    --space-section: 6rem;
+}
