@@ -12,7 +12,11 @@ const renderProjects = () => {
         const projectCards = projects
             .map(
                 (project) => `
-        <article class="project-card">
+        <article
+          class="project-card ${
+            project.featured ? "project-card--featured" : ""
+          }"
+        >
           <div class="project-card__content">
 
             <div class="project-card__meta">
