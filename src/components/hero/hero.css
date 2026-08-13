@@ -1,0 +1,65 @@
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero__eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero__title {
+    max-width: 900px;
+    margin-bottom: var(--space-5);
+}
+
+.hero__description {
+    max-width: 680px;
+    margin-bottom: var(--space-7);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding-inline: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    transition: background var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal), transform var(--transition-normal);
+}
+
+.hero__button:hover {
+    transform: translateY(-2px);
+}
+
+.hero__button--primary {
+    background: var(--color-accent);
+    color: var(--color-background);
+}
+
+.hero__button--primary:hover {
+    background: var(--color-accent-hover);
+}
+
+.hero__button--secondary {
+    background: transparent;
+    color: var(--color-text-primary);
+}
+
+.hero__button--secondary:hover {
+    border-color: var(--color-text-secondary);
+}
