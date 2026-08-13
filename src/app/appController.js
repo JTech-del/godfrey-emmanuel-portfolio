@@ -1,4 +1,4 @@
-export function initializeApp() {
+const createApplicationShell = () => {
     const app = document.querySelector("#app");
 
     if (!app) {
@@ -24,4 +24,8 @@ export function initializeApp() {
 
     <footer id="footer"></footer>
   `;
-}
+
+    return app;
+};
+
+export { createApplicationShell };

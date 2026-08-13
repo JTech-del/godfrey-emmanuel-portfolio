@@ -1,5 +1,7 @@
 body {
+    min-width: 320px;
     background: var(--color-background);
+    color: var(--color-text-primary);
 }
 
 #app {
@@ -7,6 +9,10 @@ body {
 }
 
 #main-content {
-    width: min(100% - 2rem, var(--container-max-width));
-    margin-inline: auto;
+    width: 100%;
+}
+
+#navbar,
+#footer {
+    width: 100%;
 }

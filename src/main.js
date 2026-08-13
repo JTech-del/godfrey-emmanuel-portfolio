@@ -1,5 +1,4 @@
 import "./styles/main.css";
+import { createApplicationShell } from "./app/appController.js";
 
-import { initializeApp } from "./app/appController.js";
-
-initializeApp();
+createApplicationShell();
