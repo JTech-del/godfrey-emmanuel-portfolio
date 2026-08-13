@@ -1,5 +1,10 @@
+html {
+    background: var(--color-background);
+}
+
 body {
     min-width: 320px;
+    min-height: 100vh;
     background: var(--color-background);
     color: var(--color-text-primary);
 }
@@ -8,11 +13,21 @@ body {
     min-height: 100vh;
 }
 
-#main-content {
-    width: 100%;
+.container {
+    width: min( 100% - (var(--container-padding) * 2), var(--container-max-width));
+    margin-inline: auto;
 }
 
-#navbar,
-#footer {
-    width: 100%;
+.section {
+    padding-block: var(--space-10);
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
 }
