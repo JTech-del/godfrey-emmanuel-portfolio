@@ -17,6 +17,15 @@ const renderProjects = () => {
             project.featured ? "project-card--featured" : ""
           }"
         >
+
+        <div class="project-card__media">
+         <img
+  src="${project.image}"
+  alt="Screenshot of the ${project.title} project"
+  class="project-card__image"
+/>
+        </div>
+
           <div class="project-card__content">
 
             <div class="project-card__meta">
@@ -55,23 +64,40 @@ const renderProjects = () => {
                 .join("")}
             </ul>
 
-            <div class="project-card__actions">
-              <a
-                href="${project.links.live}"
-                class="project-card__link"
-              >
-                View project
-              </a>
+          
+<div
+  class="project-card__actions"
+  aria-label="${project.title} project actions"
+>
+         ${ project.links.live
+      ? `
+        <a
+          href="${project.links.live}"
+          class="project-card__link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View project
+        </a>
+      `
+      : ""
+  }
 
-              <a
-                href="${project.links.source}"
-                class="project-card__link project-card__link--secondary"
-              >
-                Source code
-              </a>
-            </div>
-
-          </div>
+  ${
+    project.links.source
+      ? `
+        <a
+          href="${project.links.source}"
+          class="project-card__link project-card__link--secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Source code
+        </a>
+      `
+      : ""
+  }
+</div>
         </article>
       `,
     )

@@ -6,7 +6,8 @@ import { renderSkills } from "../components/skills/skillsView.js";
 import { renderJourney } from "../components/journey/journeyView.js";
 import { renderContact } from "../components/contact/contactView.js";
 import { renderFooter } from "../components/footer/footerView.js";
-
+import { renderTestimonials } from "../components/testimonials/testimonialsView.js";
+import { renderScrollToTop } from "../components/scrollToTop/scrollToTopView.js";
 const createApplicationShell = () => {
     const app = document.querySelector("#app");
 
@@ -24,6 +25,7 @@ const createApplicationShell = () => {
       <section id="skills"></section>
       <section id="journey"></section>
       <section id="contact"></section>
+      <section id="testimonials"></section>
     </main>
 
     <footer id="footer"></footer>
@@ -35,8 +37,10 @@ const createApplicationShell = () => {
     renderAbout();
     renderSkills();
     renderJourney();
+    renderTestimonials();
     renderContact();
     renderFooter();
+    renderScrollToTop();
 
     return app;
 };

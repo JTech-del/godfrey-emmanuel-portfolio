@@ -1,0 +1,3 @@
+const testimonials = [];
+
+export { testimonials };

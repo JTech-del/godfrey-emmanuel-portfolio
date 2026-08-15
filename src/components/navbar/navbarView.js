@@ -37,14 +37,21 @@ const renderNavbar = () => {
     <nav class="navbar" aria-label="Primary navigation">
       <div class="navbar__container container">
 
-        <a
-          href="#hero"
-          class="navbar__brand"
-          aria-label="Godfrey Emmanuel — Home"
-        >
-          <span class="navbar__brand-name">
-            Godfrey Emmanuel
-          </span>
+       <a
+  href="#hero"
+  class="navbar__brand"
+  aria-label="Godfrey Emmanuel — Home"
+>
+  <span class="navbar__brand-mark" aria-hidden="true">
+    GE
+  </span>
+
+  <span class="navbar__brand-info">
+    <span class="navbar__brand-name">
+      Godfrey Emmanuel
+    </span>
+
+   
 
           <span class="navbar__brand-role">
             Frontend Developer
