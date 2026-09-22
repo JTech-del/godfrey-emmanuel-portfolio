@@ -1,20 +1,34 @@
 :root {
     /* ========================================
-     Color System
+     Color System — Dark Theme
      ======================================== */
     --color-background: #0b0d10;
     --color-surface: #12161c;
     --color-surface-elevated: #181d25;
+
     --color-text-primary: #f5f7fa;
     --color-text-secondary: #a8b0bc;
     --color-text-muted: #727b88;
+
     --color-border: rgba(255, 255, 255, 0.08);
+
     --color-accent: #f5b942;
     --color-accent-hover: #ffc95c;
+
+    --color-navbar-background: rgba(11, 13, 16, 0.88);
+
     /* ========================================
      Typography
      ======================================== */
-    --font-family-base: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --font-family-base:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-md: 1rem;
@@ -23,12 +37,15 @@
     --font-size-2xl: 2rem;
     --font-size-3xl: 3rem;
     --font-size-4xl: 4rem;
+
     --line-height-tight: 1.1;
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.7;
+
     /* ========================================
      Spacing
      ======================================== */
+
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -39,40 +56,168 @@
     --space-8: 4rem;
     --space-9: 6rem;
     --space-10: 8rem;
+
     /* ========================================
      Layout
      ======================================== */
+
     --container-max-width: 1200px;
     --container-padding: 1.5rem;
+
     /* ========================================
      Borders
      ======================================== */
+
     --radius-sm: 0.375rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
     --radius-pill: 999px;
+
     /* ========================================
      Motion
      ======================================== */
+
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+
+        /* ========================================
+   color Shadows 
+     ======================================== */
+    --color-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.18);
+--color-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.24);
+--color-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.32); 
+}
+
+/* ========================================
+   Light Theme
+   ======================================== */
+
+:root[data-theme="light"] {
+    --color-background: #f3f5f7;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+
+    --color-text-primary: #17191d;
+    --color-text-secondary: #4b535f;
+    --color-text-muted: #737b87;
+
+    --color-border: rgba(23, 25, 29, 0.11);
+
+    --color-accent: #b77900;
+    --color-accent-hover: #925f00;
+
+    --color-navbar-background: rgba(243, 245, 247, 0.9);
+
+    --color-shadow-sm: 0 2px 8px rgba(23, 25, 29, 0.05);
+    --color-shadow-md: 0 8px 24px rgba(23, 25, 29, 0.08);
+    --color-shadow-lg: 0 16px 40px rgba(23, 25, 29, 0.1);
+}
+/* ========================================
+   System Preference
+   Used only when the user has not chosen
+   a theme manually.
+   ======================================== */
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --color-background: #f5f6f8;
+        --color-surface: #ffffff;
+        --color-surface-elevated: #ffffff;
+
+        --color-text-primary: #111318;
+        --color-text-secondary: #4f5663;
+        --color-text-muted: #737b87;
+
+        --color-border: rgba(17, 19, 24, 0.1);
+
+        --color-accent: #c88908;
+        --color-accent-hover: #a96f00;
+
+        --color-navbar-background: rgba(245, 246, 248, 0.88);
+    }
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+:root {
+    --font-family-base:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+    --font-size-4xl: 4rem;
+
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+    /* ========================================
+     Spacing
+     ======================================== */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
+
+    /* ========================================
+     Layout
+     ======================================== */
+
+    --container-max-width: 1200px;
+    --container-padding: 1.5rem;
+
+    /* ========================================
+     Borders
+     ======================================== */
+
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-pill: 999px;
+
+    /* ========================================
+     Motion
+     ======================================== */
+
     --transition-fast: 150ms ease;
     --transition-normal: 250ms ease;
     --transition-slow: 400ms ease;
 }
 
 @media (min-width: 640px) {
-     :root {
+    :root {
         --container-padding: 2rem;
     }
 }
 
 @media (min-width: 1024px) {
-     :root {
+    :root {
         --container-padding: 3rem;
     }
 }
 
 @media (min-width: 1440px) {
-     :root {
+    :root {
         --container-padding: 4rem;
     }
 }

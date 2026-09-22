@@ -1,0 +1,128 @@
+.case-study {
+    padding: 8rem 1.5rem 5rem;
+}
+
+.case-study__container {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.case-study__hero {
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+.case-study__eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.case-study h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+}
+
+.case-study h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.case-study h3 {
+    margin: 0 0 0.75rem;
+}
+
+.case-study p {
+    line-height: 1.75;
+}
+
+.case-study__intro {
+    max-width: 760px;
+    margin: 1.5rem 0 0;
+    font-size: 1.15rem;
+}
+
+.case-study__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.case-study__actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+}
+
+.case-study__hero-media {
+    margin: 0 0 5rem;
+}
+
+.case-study__hero-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.case-study__section {
+    max-width: 850px;
+    margin: 0 auto 5rem;
+}
+
+.case-study__list {
+    display: grid;
+    gap: 0.9rem;
+    padding-left: 1.25rem;
+}
+
+.case-study__list li {
+    line-height: 1.7;
+}
+
+.case-study__challenges {
+    display: grid;
+    gap: 2rem;
+}
+
+.case-study__challenge {
+    padding: 1.5rem;
+    border: 1px solid currentColor;
+    border-radius: 1rem;
+}
+
+.case-study__approach {
+    margin-top: 1.5rem;
+}
+
+.case-study__approach strong {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.case-study__development-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.case-study__current-state {
+    max-width: 800px;
+}
+
+@media (max-width: 700px) {
+    .case-study {
+        padding-top: 6rem;
+    }
+
+    .case-study__development-grid {
+        grid-template-columns: 1fr;
+    }
+}

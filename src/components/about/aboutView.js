@@ -8,288 +8,386 @@ const renderAbout = () => {
     }
 
     aboutSection.innerHTML = `
-<section
-class="about section"
-aria-labelledby="about-title"
->
-<div class="container">
+        <section
+            class="about section"
+            aria-labelledby="about-title"
+        >
+            <div class="container">
 
-<!-- About Introduction -->
-<div class="about__intro">
+                <!-- Section introduction -->
+                <div class="about__intro">
 
-<div class="about__intro-content">
+                    <div class="about__intro-content">
 
-<p class="about__eyebrow">
-About
-</p>
+                        <div class="about__section-marker">
+                            <span class="about__section-line"></span>
 
-<h2
-id="about-title"
-class="about__title"
->
-I turn ideas into
-<span>interfaces.</span>
-</h2>
+                            <p class="about__eyebrow">
+                                About
+                            </p>
+                        </div>
 
-<div class="about__description">
+                        <h2
+                            id="about-title"
+                            class="about__title"
+                        >
+                            I turn ideas into
+                            <span>interfaces.</span>
+                        </h2>
 
-<p>
-I'm a frontend developer who enjoys taking an idea,
-breaking it down into a clear structure, and turning
-it into a responsive web experience.
-</p>
+                        <div class="about__description">
 
-<p>
-My focus is not just making a page look good.
-I care about how the interface is structured, how it
-behaves across devices, and how maintainable the
-code will be as the project grows.
-</p>
+                            <p>
+                                I'm a frontend developer who enjoys taking
+                                an idea, breaking it down into a clear
+                                structure, and turning it into a responsive
+                                web experience.
+                            </p>
 
-</div>
+                            <p>
+                                I care about more than how a page looks.
+                                I think about how an interface behaves,
+                                how the code is organized, and how the
+                                product can evolve as it grows.
+                            </p>
 
-</div>
+                        </div>
 
-<div class="about__profile">
-<img
-src="/assets/images/profile/profile.png"
-alt="Profile portrait"
-class="about__profile-image"
-/>
-</div>
+                        <div class="about__identity">
 
-</div>
+                            <div class="about__identity-item">
+                                <span class="about__identity-label">
+                                    Currently building
+                                </span>
 
+                                <strong>
+                                    Frontend → Full Stack
+                                </strong>
+                            </div>
 
-<!-- About Development Approach -->
-<div class="about__details">
+                            <div class="about__identity-item">
+                                <span class="about__identity-label">
+                                    Core focus
+                                </span>
 
-<!-- How I Work -->
-<div class="about__workflow">
+                                <strong>
+                                    JavaScript &amp; Product Interfaces
+                                </strong>
+                            </div>
 
-<h3 class="about__subheading">
-How I Work
-</h3>
+                        </div>
 
-<div class="about__steps">
+                    </div>
 
-<article class="about__step">
+                    <div class="about__profile">
 
-<div class="about__step-number">
-01
-</div>
+                        <div class="about__profile-frame">
 
-<div class="about__step-content">
-<h4>Understand</h4>
+                            <img
+                                src="/assets/images/profile/profile.png"
+                                alt="Godfrey Emmanuel"
+                                class="about__profile-image"
+                                loading="lazy"
+                            />
 
-<p>
-Understand the problem, requirements,
-and experience before writing the
-interface.
-</p>
-</div>
+                            <div class="about__profile-caption">
+                                <span>Frontend Developer</span>
+                                <span>Building with intention.</span>
+                            </div>
 
-</article>
+                        </div>
 
+                    </div>
 
-<article class="about__step">
+                </div>
 
-<div class="about__step-number">
-02
-</div>
 
-<div class="about__step-content">
-<h4>Structure</h4>
+                <!-- Development approach -->
+                <div class="about__details">
 
-<p>
-Build a clear foundation that keeps
-the project organized and maintainable.
-</p>
-</div>
+                    <!-- How I Work -->
+                    <div class="about__workflow">
 
-</article>
+                        <div class="about__detail-heading">
 
+                            <span class="about__detail-index">
+                                01
+                            </span>
 
-<article class="about__step">
+                            <div>
+                                <p class="about__detail-eyebrow">
+                                    Development approach
+                                </p>
 
-<div class="about__step-number">
-03
-</div>
+                                <h3 class="about__subheading">
+                                    How I Work
+                                </h3>
+                            </div>
 
-<div class="about__step-content">
-<h4>Build</h4>
+                        </div>
 
-<p>
-Turn the structure into responsive,
-functional interfaces.
-</p>
-</div>
+                        <div class="about__steps">
 
-</article>
+                            <article class="about__step">
 
+                                <div class="about__step-number">
+                                    01
+                                </div>
 
-<article class="about__step">
+                                <div class="about__step-content">
+                                    <h4>Understand</h4>
 
-<div class="about__step-number">
-04
-</div>
+                                    <p>
+                                        Start with the problem, requirements,
+                                        and intended experience before
+                                        writing the interface.
+                                    </p>
+                                </div>
 
-<div class="about__step-content">
-<h4>Refine</h4>
+                            </article>
 
-<p>
-Test, improve, and polish the experience
-until the details feel right.
-</p>
-</div>
 
-</article>
+                            <article class="about__step">
 
-</div>
+                                <div class="about__step-number">
+                                    02
+                                </div>
 
-</div>
+                                <div class="about__step-content">
+                                    <h4>Structure</h4>
 
+                                    <p>
+                                        Establish a clear foundation so the
+                                        interface, components, and project
+                                        logic remain organized.
+                                    </p>
+                                </div>
 
-<!-- Current Focus -->
-<div class="about__focus">
+                            </article>
 
-<div class="about__focus-header">
 
-<h3 class="about__subheading">
-Current Focus
-</h3>
+                            <article class="about__step">
 
-<p>
-What I'm developing right now.
-</p>
+                                <div class="about__step-number">
+                                    03
+                                </div>
 
-</div>
+                                <div class="about__step-content">
+                                    <h4>Build</h4>
 
+                                    <p>
+                                        Turn the structure into responsive,
+                                        functional interfaces that behave
+                                        naturally across devices.
+                                    </p>
+                                </div>
 
-<div class="about__focus-list">
+                            </article>
 
-<article class="about__focus-item">
 
-<div class="about__focus-icon">
-<i data-lucide="code-2"></i>
-</div>
+                            <article class="about__step">
 
-<div class="about__focus-content">
-<h4>Frontend Development</h4>
+                                <div class="about__step-number">
+                                    04
+                                </div>
 
-<p>
-Building responsive, reusable interfaces
-with HTML, CSS, and JavaScript.
-</p>
-</div>
+                                <div class="about__step-content">
+                                    <h4>Refine</h4>
 
-</article>
+                                    <p>
+                                        Test, debug, improve, and polish the
+                                        experience until the details feel
+                                        intentional.
+                                    </p>
+                                </div>
 
+                            </article>
 
-<article class="about__focus-item">
+                        </div>
 
-<div class="about__focus-icon">
-<i data-lucide="layers-3"></i>
-</div>
+                    </div>
 
-<div class="about__focus-content">
-<h4>UI Architecture</h4>
 
-<p>
-Creating clear component structures that
-keep projects organized and maintainable.
-</p>
-</div>
+                    <!-- Current Focus -->
+                    <div class="about__focus">
 
-</article>
+                        <div class="about__focus-header">
 
+                            <div>
+                                <p class="about__detail-eyebrow">
+                                    What I'm developing
+                                </p>
 
-<article class="about__focus-item">
+                                <h3 class="about__subheading">
+                                    Current Focus
+                                </h3>
+                            </div>
 
-<div class="about__focus-icon">
-<i data-lucide="monitor-smartphone"></i>
-</div>
+                            <span class="about__focus-count">
+                                06
+                            </span>
 
-<div class="about__focus-content">
-<h4>Responsive Design</h4>
+                        </div>
 
-<p>
-Designing experiences that work naturally
-across desktop, tablet, and mobile devices.
-</p>
-</div>
 
-</article>
+                        <div class="about__focus-list">
 
+                            <article class="about__focus-item">
 
-<article class="about__focus-item">
+                                <div class="about__focus-icon">
+                                    <i
+                                        data-lucide="code-2"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
 
-<div class="about__focus-icon about__focus-icon--text">
-JS
-</div>
+                                <div class="about__focus-content">
+                                    <h4>Frontend Development</h4>
 
-<div class="about__focus-content">
-<h4>JavaScript</h4>
+                                    <p>
+                                        Building responsive, reusable
+                                        interfaces with HTML, CSS,
+                                        JavaScript, and modern frontend
+                                        practices.
+                                    </p>
+                                </div>
 
-<p>
-Deepening my understanding of JavaScript
-and using it to build more interactive,
-reliable interfaces.
-</p>
-</div>
+                            </article>
 
-</article>
 
+                            <article class="about__focus-item">
 
-<article class="about__focus-item">
+                                <div class="about__focus-icon">
+                                    <i
+                                        data-lucide="layers-3"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
 
-<div class="about__focus-icon">
-<i data-lucide="code-2"></i>
-</div>
+                                <div class="about__focus-content">
+                                    <h4>UI Architecture</h4>
 
-<div class="about__focus-content">
-<h4>Clean &amp; Maintainable Code</h4>
+                                    <p>
+                                        Creating clear structures that keep
+                                        interfaces organized and easier to
+                                        maintain as projects grow.
+                                    </p>
+                                </div>
 
-<p>
-Writing code that is structured, readable,
-and easier to improve as a project grows.
-</p>
-</div>
+                            </article>
 
-</article>
 
+                            <article class="about__focus-item">
 
-<article class="about__focus-item">
+                                <div class="about__focus-icon">
+                                    <i
+                                        data-lucide="monitor-smartphone"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
 
-<div class="about__focus-icon">
-<i data-lucide="book-open"></i>
-</div>
+                                <div class="about__focus-content">
+                                    <h4>Responsive Design</h4>
 
-<div class="about__focus-content">
-<h4>Continuous Learning</h4>
+                                    <p>
+                                        Designing experiences that adapt
+                                        naturally across desktop, tablet,
+                                        and mobile devices.
+                                    </p>
+                                </div>
 
-<p>
-Learning through real projects,
-experimentation, debugging, and
-continuous refinement.
-</p>
-</div>
+                            </article>
 
-</article>
 
-</div>
+                            <article class="about__focus-item">
 
-</div>
+                                <div class="about__focus-icon about__focus-icon--text">
+                                    JS
+                                </div>
 
-</div>
+                                <div class="about__focus-content">
+                                    <h4>JavaScript</h4>
 
-</div>
-</section>
-`;
+                                    <p>
+                                        Deepening my understanding of
+                                        JavaScript and using it to create
+                                        more interactive and reliable
+                                        interfaces.
+                                    </p>
+                                </div>
 
-    if (window.lucide) {
-        window.lucide.createIcons();
-    }
+                            </article>
+
+
+                            <article class="about__focus-item">
+
+                                <div class="about__focus-icon">
+                                    <i
+                                        data-lucide="braces"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+
+                                <div class="about__focus-content">
+                                    <h4>Clean &amp; Maintainable Code</h4>
+
+                                    <p>
+                                        Writing code that is structured,
+                                        readable, and easier to improve
+                                        as a project evolves.
+                                    </p>
+                                </div>
+
+                            </article>
+
+
+                            <article class="about__focus-item">
+
+                                <div class="about__focus-icon">
+                                    <i
+                                        data-lucide="book-open"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+
+                                <div class="about__focus-content">
+                                    <h4>Continuous Learning</h4>
+
+                                    <p>
+                                        Learning through real projects,
+                                        experimentation, debugging, and
+                                        continuous refinement.
+                                    </p>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Closing statement -->
+                <div class="about__closing">
+
+                    <span class="about__closing-mark">“</span>
+
+                    <p>
+                        Good frontend work is where thoughtful design,
+                        clear structure, and reliable behavior meet.
+                    </p>
+
+                    <span class="about__closing-line"></span>
+
+                </div>
+
+            </div>
+        </section>
+    `;
+
+    window.lucide?.createIcons();
 };
 
 export { renderAbout };

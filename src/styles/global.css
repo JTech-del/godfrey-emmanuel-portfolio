@@ -5,32 +5,91 @@ html {
 body {
     min-width: 320px;
     min-height: 100vh;
+    overflow-x: hidden;
+
     background: var(--color-background);
     color: var(--color-text-primary);
+
+    transition:
+        background-color var(--transition-normal),
+        color var(--transition-normal);
 }
+
+
+/* ========================================
+   LIGHT THEME
+======================================== */
+
+:root[data-theme="light"] body {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(183, 121, 0, 0.045),
+            transparent 28rem
+        ),
+        var(--color-background);
+}
+
+:root[data-theme="light"] .section {
+    position: relative;
+}
+
+
+/* ========================================
+   APPLICATION
+======================================== */
 
 #app {
     min-height: 100vh;
 }
 
+
+/* ========================================
+   CONTAINER
+======================================== */
+
 .container {
-    width: min( 100% - (var(--container-padding) * 2), var(--container-max-width));
+    width: min(
+        100% - (var(--container-padding) * 2),
+        var(--container-max-width)
+    );
+
     margin-inline: auto;
 }
 
+
+/* ========================================
+   SECTION
+======================================== */
+
 .section {
-    padding-block: clamp( 4rem, 10vw, 8rem);
+    padding-block: clamp(4rem, 10vw, 8rem);
 }
+
+
+/* ========================================
+   SELECTION
+======================================== */
 
 ::selection {
     background: var(--color-accent);
     color: var(--color-background);
 }
 
+
+/* ========================================
+   FOCUS
+======================================== */
+
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
 }
+
+
+/* ========================================
+   GRID UTILITIES
+======================================== */
 
 .grid {
     display: grid;
@@ -49,6 +108,11 @@ body {
     }
 }
 
+
+/* ========================================
+   STACK UTILITIES
+======================================== */
+
 .stack {
     display: flex;
     flex-direction: column;
@@ -59,18 +123,93 @@ body {
     gap: var(--space-7);
 }
 
-body {
-    min-width: 320px;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background: var(--color-background);
-    color: var(--color-text-primary);
+
+/* ========================================
+   MOTION FOUNDATION
+======================================== */
+
+.motion-ready {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.motion-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   MOTION VARIANTS
+======================================== */
+
+.motion-ready[data-motion="fade"] {
+    transform: none;
+}
+
+.motion-ready[data-motion="fade-left"] {
+    transform: translateX(20px);
+}
+
+.motion-ready[data-motion="fade-right"] {
+    transform: translateX(-20px);
+}
+
+.motion-ready[data-motion="scale"] {
+    transform: scale(0.97);
+}
+
+.motion-ready[data-motion="fade-up"] {
+    transform: translateY(24px);
+}
+
+.motion-ready[data-motion="fade-up-large"] {
+    transform: translateY(42px);
+}
+
+
+/* ========================================
+   STAGGER
+======================================== */
+
+.motion-ready[data-motion-delay="1"] {
+    transition-delay: 80ms;
+}
+
+.motion-ready[data-motion-delay="2"] {
+    transition-delay: 160ms;
+}
+
+.motion-ready[data-motion-delay="3"] {
+    transition-delay: 240ms;
+}
+
+.motion-ready[data-motion-delay="4"] {
+    transition-delay: 320ms;
+}
+
+.motion-ready[data-motion-delay="5"] {
+    transition-delay: 400ms;
+}
+
+.motion-ready[data-motion-delay="6"] {
+    transition-delay: 480ms;
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
+
     *,
     *::before,
     *::after {
@@ -78,5 +217,10 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .motion-ready {
+        opacity: 1;
+        transform: none;
     }
 }
