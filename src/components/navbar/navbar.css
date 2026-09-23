@@ -38,6 +38,11 @@
     gap: var(--space-3);
 }
 
+.navbar__brand:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
 .navbar__brand-mark {
     display: inline-flex;
     align-items: center;

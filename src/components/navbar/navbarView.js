@@ -1,3 +1,4 @@
+
 import "./navbar.css";
 
 import {
@@ -26,7 +27,10 @@ const navigationItems = [
         label: "Journey",
         href: "#journey",
     },
-  { label: "GitHub", href: "#github" },
+    {
+        label: "GitHub",
+        href: "#github",
+    },
     {
         label: "Contact",
         href: "#contact",
@@ -75,7 +79,9 @@ const renderNavbar = () => {
                         type="button"
                         class="navbar__theme-toggle"
                         aria-label="Switch to ${
-                            currentTheme === "dark" ? "light" : "dark"
+                            currentTheme === "dark"
+                                ? "light"
+                                : "dark"
                         } theme"
                         aria-pressed="${currentTheme === "light"}"
                     >
@@ -155,7 +161,7 @@ const renderNavbar = () => {
     /*
      * Mobile menu state
      */
-    const setMenuState = (isOpen) => {
+    const setMenuState = (isOpen, { restoreFocus = false } = {}) => {
         navigation.classList.toggle(
             "navbar__navigation--open",
             isOpen,
@@ -177,6 +183,10 @@ const renderNavbar = () => {
                 ? "Close navigation menu"
                 : "Open navigation menu",
         );
+
+        if (!isOpen && restoreFocus) {
+            menuToggle.focus();
+        }
     };
 
     /*
@@ -193,7 +203,10 @@ const renderNavbar = () => {
             );
 
             if (isActive) {
-                link.setAttribute("aria-current", "location");
+                link.setAttribute(
+                    "aria-current",
+                    "location",
+                );
             } else {
                 link.removeAttribute("aria-current");
             }
@@ -226,7 +239,9 @@ const renderNavbar = () => {
             themeIcon.innerHTML = `
                 <i
                     data-lucide="${
-                        nextTheme === "dark" ? "sun" : "moon"
+                        nextTheme === "dark"
+                            ? "sun"
+                            : "moon"
                     }"
                     aria-hidden="true"
                 ></i>
@@ -242,6 +257,10 @@ const renderNavbar = () => {
 
     /*
      * Mobile menu toggle
+     *
+     * Native <button> keyboard behavior already supports
+     * Enter and Space, so no manual keydown handler is
+     * required for those interactions.
      */
     menuToggle.addEventListener("click", () => {
         const isOpen =
@@ -251,7 +270,55 @@ const renderNavbar = () => {
     });
 
     /*
-     * Close mobile menu after navigation
+     * Escape closes the mobile menu.
+     *
+     * Focus is returned to the menu button so keyboard users
+     * do not lose their position after closing the menu.
+     */
+    menuToggle.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") {
+            return;
+        }
+
+        const isOpen =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        if (!isOpen) {
+            return;
+        }
+
+        event.preventDefault();
+
+        setMenuState(false, {
+            restoreFocus: true,
+        });
+    });
+
+    navigation.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") {
+            return;
+        }
+
+        const isOpen =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        if (!isOpen) {
+            return;
+        }
+
+        event.preventDefault();
+
+        setMenuState(false, {
+            restoreFocus: true,
+        });
+    });
+
+    /*
+     * Close mobile menu after navigation.
+     *
+     * The clicked link becomes the user's new navigation
+     * destination, so focus is not forcibly returned to the
+     * menu button here.
      */
     navigationLinks.forEach((link) => {
         link.addEventListener("click", () => {
@@ -261,6 +328,11 @@ const renderNavbar = () => {
 
     /*
      * Observe page sections and update the active navigation item.
+     *
+     * IntersectionObserver is progressively enhanced here.
+     * If the browser does not support it, normal navigation
+     * remains fully functional and the active-link enhancement
+     * is skipped.
      */
     const sections = navigationItems
         .map((item) => {
@@ -271,39 +343,38 @@ const renderNavbar = () => {
         .filter(Boolean);
 
     if (sections.length > 0) {
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                const visibleSections = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            b.intersectionRatio -
-                            a.intersectionRatio,
-                    );
-
-                if (visibleSections.length > 0) {
-                    setActiveLink(
-                        visibleSections[0].target.id,
-                    );
-                }
-            },
-            {
-                root: null,
-                rootMargin: "-20% 0px -55% 0px",
-                threshold: [0.1, 0.25, 0.5, 0.75],
-            },
-        );
-
-        sections.forEach((section) => {
-            sectionObserver.observe(section);
-        });
-
-        /*
-         * Home is the initial state before the first
-         * meaningful section intersection occurs.
-         */
         setActiveLink("hero");
+
+        if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver(
+                (entries) => {
+                    const visibleSections = entries
+                        .filter((entry) => entry.isIntersecting)
+                        .sort(
+                            (a, b) =>
+                                b.intersectionRatio -
+                                a.intersectionRatio,
+                        );
+
+                    if (visibleSections.length > 0) {
+                        setActiveLink(
+                            visibleSections[0].target.id,
+                        );
+                    }
+                },
+                {
+                    root: null,
+                    rootMargin: "-20% 0px -55% 0px",
+                    threshold: [0.1, 0.25, 0.5, 0.75],
+                },
+            );
+
+            sections.forEach((section) => {
+                sectionObserver.observe(section);
+            });
+        }
     }
+
 };
 
 export { renderNavbar };
