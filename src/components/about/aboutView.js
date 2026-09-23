@@ -84,7 +84,7 @@ const renderAbout = () => {
                         <div class="about__profile-frame">
 
                             <img
-                                src="/assets/images/profile/profile.png"
+                                src="/assets/images/profile/profile.webp"
                                 alt="Godfrey Emmanuel"
                                 class="about__profile-image"
                                 loading="lazy"
