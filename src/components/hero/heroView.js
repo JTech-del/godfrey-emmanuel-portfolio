@@ -48,7 +48,7 @@ const renderHero = () => {
                         </a>
 
                         <a
-                            href="/assets/documents/godfrey-emmanuel-resume.pdf"
+                            href="/assets/documents/Godfrey-Emmanuel-Resume.pdf"
                             class="hero__button hero__button--secondary"
                             download
                         >
